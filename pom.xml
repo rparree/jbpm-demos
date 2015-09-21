@@ -72,6 +72,7 @@
         <module>error-handling</module>
         <module>util</module>
         <module>signalling</module>
+        <module>webservice</module>
     </modules>
     <build>
         <plugins>
