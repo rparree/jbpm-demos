@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.edc4it</groupId>
+    <artifactId>jbmp-demos-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>jbmp-demos</name>
+    <url>http://maven.apache.org</url>
+
+
+    <repositories>
+        <repository>
+            <id>jboss-public-repository</id>
+            <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        </repository>
+        <repository>
+            <id>rh-repository</id>
+            <url>http://maven.repository.redhat.com/techpreview/all</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss-public-plugin-repository</id>
+            <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jbpm.version>6.2.0.Final-redhat-4</jbpm.version>
+        <scala.version>2.11.7</scala.version>
+
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jbpm</groupId>
+                <artifactId>jbpm-bom</artifactId>
+                <version>${jbpm.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
+                <groupId>org.specs2</groupId>
+                <artifactId>specs2-core_2.11</artifactId>
+                <version>3.6.4</version>
+            </dependency>
+
+
+        </dependencies>
+
+        
+    </dependencyManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>outcome</module>
+        <module>error-handling</module>
+        <module>util</module>
+        <module>signalling</module>
+    </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

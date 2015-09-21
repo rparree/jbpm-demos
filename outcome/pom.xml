@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.edc4it</groupId>
+        <artifactId>jbmp-demos-parent</artifactId>
+        <relativePath>../pom.xml</relativePath>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>outcome</artifactId>
+    <packaging>jar</packaging>
+
+    <name>jbmp-outcome</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-bpmn2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jbpm</groupId>
+            <artifactId>jbpm-test</artifactId>
+            <!--<scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>com.edc4it</groupId>
+            <artifactId>util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>

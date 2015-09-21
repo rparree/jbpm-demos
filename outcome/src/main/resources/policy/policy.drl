@@ -1,0 +1,40 @@
+package policy
+
+dialect "mvel"
+
+import model.*
+
+rule "debug" ruleflow-group "price" salience -1 
+when
+	policy : Policy( )
+then
+	System.out.println("fact:  " + policy);
+end
+
+rule "debug2" ruleflow-group "price" salience -1 
+when
+	r : Rejection( )
+then
+	System.out.println("fact:  " + r);
+end
+
+rule "low risk" ruleflow-group "price"
+no-loop 
+when
+	policy : Policy( risk < 500 )
+then
+	modify(policy) { price = 756; }
+end
+
+rule "unacceptable risk" ruleflow-group "price"
+no-loop
+when
+	policy : Policy( risk >= 500 )
+then
+	insert(new Rejection("Risk > 500", RejectionLevel.ERROR));
+end
+
+
+
+
+
