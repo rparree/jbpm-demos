@@ -1,0 +1,10 @@
+### JetBrains template
+*.iml
+.idea/
+*.ipr
+*.iws
+
+### Java template
+*.class
+target/
+*.tlog
