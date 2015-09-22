@@ -2,7 +2,7 @@
 <kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://jboss.org/kie/6.0.0/kmodule">
 
-	<kbase name="webserviceDemo" packages="services" >
+	<kbase name="serviceDemo" packages="services" >
 		<ksession name="mysession" default="true" />
 	</kbase>
 
