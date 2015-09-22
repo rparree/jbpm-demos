@@ -20,9 +20,16 @@ trait DefaultClasspathRuntimeEnvironment extends SRuntimeEnvironment{
 
 case class KBaseSession(kbase : String, ksession : String)
 
-trait SingletonRuntimeManager {
+sealed trait RuntimeManagerStrategy
+
+trait SingletonRuntimeManager extends  RuntimeManagerStrategy{
   this : SRuntimeEnvironment  =>
   lazy val runtimeManager: RuntimeManager = RuntimeManagerFactory.Factory.get.newSingletonRuntimeManager(environment)
+}
+
+trait PreRequestRuntimeManager extends RuntimeManagerStrategy {
+  this : SRuntimeEnvironment  =>
+  lazy val runtimeManager: RuntimeManager = RuntimeManagerFactory.Factory.get.newPerProcessInstanceRuntimeManager(environment)
 }
 
 trait H2 {
