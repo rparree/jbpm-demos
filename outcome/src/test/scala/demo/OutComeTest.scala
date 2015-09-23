@@ -11,7 +11,7 @@ import org.kie.api.runtime.process.ProcessInstance
 
 import scala.collection.JavaConversions._
 
-class OutComeTest extends JbpmJUnitBaseTestCase(true,true) {
+class OutComeTest extends JbpmJUnitBaseTestCase(true,true)  {
 
   @Before
   def setupKie :Unit = createRuntimeManager(Map("policy/risk.bpmn2"->ResourceType.BPMN2,"policy/policy.drl"->ResourceType.DRL))
