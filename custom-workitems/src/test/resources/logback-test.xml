@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <encoder>
+            <pattern>[%thread] %highlight(%-5level) %cyan(%logger{0}) - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="workitem" level="DEBUG"/>
+
+
+    <root level="warn">
+        <appender-ref ref="consoleAppender" />
+    </root>
+
+</configuration>

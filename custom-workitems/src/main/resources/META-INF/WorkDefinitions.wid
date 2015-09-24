@@ -1,0 +1,26 @@
+import org.drools.core.process.core.datatype.impl.type.StringDataType;
+import org.drools.core.process.core.datatype.impl.type.ObjectDataType;
+
+[
+  [
+    "name" : "Hello",
+    "parameters" : [
+        "message" : new StringDataType()
+    ],
+    "results" : [],
+    "displayName" : "HelloTask",
+    "icon" : "hello.gif"
+  ],
+  [
+   "name" : "ActiveMQSender",
+   "parameters" :[
+     "brokerURL" : new StringDataType(),
+     "queueName" : new StringDataType(),
+     "payload" : new ObjectDataType()
+   ],
+   "results" : [],
+   "displayName" : "activemq",
+   icon :channel.png
+
+  ]
+]
