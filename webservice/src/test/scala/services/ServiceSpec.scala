@@ -10,6 +10,7 @@ import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.IOFileFilter
 import org.jbpm.process.workitem.webservice.WebServiceWorkItemHandler
 import org.kie.api.runtime.KieSession
+import org.kie.api.runtime.manager.RuntimeEngine
 import org.kie.api.runtime.process.ProcessInstance.STATE_COMPLETED
 import org.specs2.mutable.Specification
 import org.specs2.specification.BeforeEach
@@ -24,7 +25,8 @@ class ServiceSpec extends Specification with KieTestContext with BeforeEach {
   override val config = KBaseSession("serviceDemo", "mysession")
 
 
-  "web service smoke test" >> { s: KieSession =>
+  "the process should call the web service and a file is created" >> { rte: RuntimeEngine =>
+    val s = rte.getKieSession
     s.getWorkItemManager.registerWorkItemHandler("WSTask", new WebServiceWorkItemHandler(s))
     val params: Map[String, AnyRef] = Map("r" -> new DemoRequest("jenny","jenny@work.com"))
     val serviceProcess = s.startProcess("defaultprocessid",params )
