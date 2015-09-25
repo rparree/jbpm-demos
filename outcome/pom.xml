@@ -21,7 +21,7 @@
         <dependency>
             <groupId>org.jbpm</groupId>
             <artifactId>jbpm-test</artifactId>
-            <!--<scope>test</scope>-->
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.edc4it</groupId>
