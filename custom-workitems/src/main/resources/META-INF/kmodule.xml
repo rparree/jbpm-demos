@@ -2,7 +2,7 @@
 <kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://jboss.org/kie/6.0.0/kmodule" xsi:schemaLocation="http://jboss.org/kie/6.0.0/kmodule https://raw.githubusercontent.com/droolsjbpm/droolsjbpm-knowledge/master/kie-api/src/main/resources/org/kie/api/kmodule.xsd">
 
-    <kbase name="customWorkitemBase" packages="workitem.demo">
+    <kbase name="customWorkitemBase" packages="tasks.demo">
 
         <ksession name="default" default="true">
            <!-- could list them here

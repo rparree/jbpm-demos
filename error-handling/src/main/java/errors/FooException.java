@@ -1,4 +1,4 @@
-package signals;
+package errors;
 
 public class FooException  extends  Exception {
     public FooException() {

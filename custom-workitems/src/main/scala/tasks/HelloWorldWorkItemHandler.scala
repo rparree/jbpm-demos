@@ -1,4 +1,4 @@
-package workitem
+package tasks
 
 import com.typesafe.scalalogging.LazyLogging
 import org.jbpm.process.workitem.AbstractWorkItemHandler

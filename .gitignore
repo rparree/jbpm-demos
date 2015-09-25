@@ -1,3 +1,4 @@
+
 ### JetBrains template
 *.iml
 .idea/
@@ -8,3 +9,5 @@
 *.class
 target/
 *.tlog
+
+.cache-tests

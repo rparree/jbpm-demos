@@ -1,4 +1,4 @@
-package workitem
+package tasks
 
 import demo.util.IgnoreZeroResourceTx
 import org.jbpm.test.JbpmJUnitBaseTestCase

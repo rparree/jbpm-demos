@@ -1,5 +1,7 @@
 package demo.util
 
+import bitronix.tm.BitronixTransactionManager
+import org.jbpm.services.task.identity.{JBossUserGroupCallbackImpl, MvelUserGroupCallbackImpl}
 import org.jbpm.test.JBPMHelper
 import org.kie.api.runtime.manager._
 
@@ -14,7 +16,8 @@ trait DefaultClasspathRuntimeEnvironment extends SRuntimeEnvironment{
 
   lazy val builderFactory: RuntimeEnvironmentBuilderFactory = RuntimeEnvironmentBuilder.Factory.get
   lazy val builder = builderFactory.newClasspathKmoduleDefaultBuilder(config.kbase,config.ksession)
-  lazy val environment = builder.get
+
+  lazy val environment = builder.userGroupCallback(new OptionalJBossUserGroupCallbackImpl("classpath:roles.properties")).get
 
 }
 
@@ -35,5 +38,7 @@ trait PreRequestRuntimeManager extends RuntimeManagerStrategy {
 trait H2 {
   JBPMHelper.startH2Server
   JBPMHelper.setupDataSource
+
+
 
 }

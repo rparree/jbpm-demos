@@ -4,7 +4,7 @@
     <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <withJansi>true</withJansi>
         <encoder>
-            <pattern>[%thread] %highlight(%-5level) %cyan(%logger{0}) - %msg %n</pattern>
+            <pattern>%d [%t] %-5p %m%n</pattern>
         </encoder>
     </appender>
 

@@ -6,46 +6,20 @@
         <artifactId>jbmp-demos-parent</artifactId>
         <groupId>com.edc4it</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>custom-workitems</artifactId>
+    <artifactId>human-tasks</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.jbpm</groupId>
             <artifactId>jbpm-bpmn2</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.jbpm</groupId>
-            <artifactId>jbpm-workitems</artifactId>
-        </dependency>
-
-
-
-        <dependency>
             <groupId>com.edc4it</groupId>
             <artifactId>util</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.jsuereth</groupId>
-            <artifactId>scala-arm_2.11</artifactId>
-            <version>1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-all</artifactId>
-            <version>5.12.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-            <version>2.4.2</version>
-        </dependency>
-
-
     </dependencies>
-
 
 </project>

@@ -1,4 +1,4 @@
-package workitem
+package tasks
 
 import java.util
 import javax.jms.{TextMessage, Session}
