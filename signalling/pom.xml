@@ -16,14 +16,20 @@
             <groupId>org.jbpm</groupId>
             <artifactId>jbpm-bpmn2</artifactId>
         </dependency>
-        <dependency>
+      <!--  <dependency>
             <groupId>org.specs2</groupId>
             <artifactId>specs2-core_2.11</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.edc4it</groupId>
             <artifactId>util</artifactId>
             <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-core_2.11</artifactId>
+            <version>3.6.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

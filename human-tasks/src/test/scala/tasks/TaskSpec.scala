@@ -51,7 +51,10 @@ class TaskSpec extends Specification with IgnoreZeroResourceTx with KieTestConte
       val content: mutable.Map[String, AnyRef] = taskService.getTaskContent(id)
       val value = content.get("value").map(v => v.asInstanceOf[Int]).getOrElse(0)
 
-      taskService.complete(id, user, Map[String,AnyRef]("answer"->Int.box(value*2)))
+      value should beEqualTo(10)
+      val jennyWorking = value * 2
+
+      taskService.complete(id, user, Map[String,AnyRef]("answer"->Int.box(jennyWorking)))
 
     }
     process(id) should be(COMPLETED)

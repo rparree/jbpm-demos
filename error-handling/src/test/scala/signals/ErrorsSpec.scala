@@ -9,7 +9,7 @@ import org.specs2.mutable.Specification
 
 
 
-class ErrorsSpec extends Specification with KieTestContext  with ProcessMatchers   {
+class ErrorsSpec extends Specification with IgnoreZeroResourceTx with KieTestContext  with ProcessMatchers   {
 
   override val config = KBaseSession("errorDemo", "mysession")
 

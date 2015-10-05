@@ -9,22 +9,16 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>error-handling</artifactId>
+
+    <artifactId>remoting</artifactId>
+
+
     <dependencies>
         <dependency>
-            <groupId>org.jbpm</groupId>
-            <artifactId>jbpm-bpmn2</artifactId>
+            <groupId>org.kie.remote</groupId>
+            <artifactId>kie-remote-client</artifactId>
         </dependency>
-        <!--<dependency>
-            <groupId>org.specs2</groupId>
-            <artifactId>specs2-core_2.11</artifactId>
-        </dependency>-->
-        <dependency>
-            <groupId>org.specs2</groupId>
-            <artifactId>specs2-core_2.11</artifactId>
-            <version>3.6.4</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>com.edc4it</groupId>
             <artifactId>util</artifactId>
@@ -32,4 +26,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>

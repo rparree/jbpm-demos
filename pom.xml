@@ -35,6 +35,13 @@
 
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>bc</id>
+            <url>http://admin:admin@localhost:8080/jbpm-console/maven2/</url>
+
+        </repository>
+    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
