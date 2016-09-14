@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # jBPMN/BPM Suite example
 
 Some examples for the 6.x release mostly ported from 5.x release and demos from other BPMN engines (plus a few new ones)
@@ -31,3 +32,4 @@ To run:
 ```
 $ docker run -d -P -p 8080:8080 -p 8001:8001 --name jbpm  docker.io/jboss/jbpm-workbench-showcase
 ```
+
