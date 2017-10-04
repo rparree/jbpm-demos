@@ -17,12 +17,15 @@ import scala.beans.BeanProperty
 import scala.collection.mutable
 import scala.collection.JavaConversions._
 import scala.collection.JavaConverters._
+
 /**
- * todo
- */
+  * todo
+  */
 object RemoteBPMNApp extends App with ProcessHelpers with LazyLogging {
 
-  implicit def createURL(s: String)= new URL(s)
+  implicit def createURL(s: String) = new URL(s)
+
+  /* Ensure mary belongs to  `rest-all` group */
 
   implicit val maryRte: RuntimeEngine = RemoteRuntimeEngineFactory.newRestBuilder()
     .addUrl("http://localhost:8080/jbpm-console").addUserName("mary").addPassword("mary")
@@ -30,20 +33,19 @@ object RemoteBPMNApp extends App with ProcessHelpers with LazyLogging {
 
   val session: KieSession = maryRte.getKieSession
 
-  val param : Map[String,AnyRef] = Map("name"->new Applicant("Jennifer Wirth"))
-   val process = session.startProcess("hiring",param)
+  val param: Map[String, AnyRef] = Map("name" -> "Jennifer Wirth")
+  val process = session.startProcess("hiring", param)
 
-   val taskSummaries = tasksOf("mary")
+  val taskSummaries = tasksOf("mary")
 
-  val taskId= taskSummaries.head.getId
+  val taskId = taskSummaries.head.getId
 
   private val option = maryRte.getTaskService.getTaskContent(taskId).asScala.get("in_name")
   println(option.get)
-  maryRte.getTaskService.claim(taskId,"mary")
-  maryRte.getTaskService.start(taskId,"mary")
+  maryRte.getTaskService.claim(taskId, "mary")
+  maryRte.getTaskService.start(taskId, "mary")
 
-  maryRte.getTaskService.complete(taskId,"mary",Map("out_score"-> Int.box(11)))
-
+  maryRte.getTaskService.complete(taskId, "mary", Map("out_score" -> Int.box(11)))
 
 
   /*admin=admin,analyst,kiemgmt
@@ -54,9 +56,6 @@ object RemoteBPMNApp extends App with ProcessHelpers with LazyLogging {
   jack=analyst,IT
   katy=analyst,HR
   salaboy=admin,analyst,IT,HR,Accounting*/
-
-
-
 
 
 }
